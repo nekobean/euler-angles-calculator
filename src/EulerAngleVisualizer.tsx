@@ -7,7 +7,6 @@ import Box from "@mui/material/Box";
 import RightArrow from "./assets/right-arrow.svg";
 
 import Field from "./Grid";
-import "./App.css";
 import {
   rotationMatrixX,
   rotationMatrixY,

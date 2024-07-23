@@ -5,8 +5,6 @@ import { rotationMatrixX, rotationMatrixY, rotationMatrixZ } from "./utils";
 import CopyToClipBoard from "react-copy-to-clipboard";
 import Button from "@mui/material/Button";
 
-import "./App.css";
-
 interface FoamulaProps {
   axes: THREE.Vector3[];
   order: string;
