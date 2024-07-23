@@ -51,7 +51,7 @@ function EulerRotation() {
     "\\gamma",
     "\\psi",
     "\\theta",
-    "\\varphi",
+    "\\phi",
     "\\textit{roll}",
     "\\textit{pitch}",
     "\\textit{yaw}",

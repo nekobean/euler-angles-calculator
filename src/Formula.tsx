@@ -218,9 +218,10 @@ export default function Foamula({
   angles,
   symbols = ["\\alpha", "\\beta", "\\gamma"],
 }: FoamulaProps) {
+  const digits = 7; // 表示桁数
   const R1 = rotationMatrixFoamula(order[0], symbols[0]);
-  const R2 = rotationMatrixFoamula(order[1], symbols[0]);
-  const R3 = rotationMatrixFoamula(order[2], symbols[0]);
+  const R2 = rotationMatrixFoamula(order[1], symbols[1]);
+  const R3 = rotationMatrixFoamula(order[2], symbols[2]);
   const R = rotationEulerMatrix(order, symbols);
 
   const RNumeric = rotationMatrixNumeric(
@@ -236,9 +237,10 @@ export default function Foamula({
   );
   const [m11, m21, m31, m12, m22, m32, m13, m23, m33] = RNumeric.elements;
 
-  const RText = `[[${m11}, ${m12}, ${m13}],
-[${m21}, ${m22}, ${m23}],
-[${m31}, ${m32}, ${m33}]`;
+  // prettier-ignore
+  const RText = `[[${m11.toFixed(digits)}, ${m12.toFixed(digits)}, ${m13.toFixed(digits)}],
+[${m21.toFixed(digits)}, ${m22.toFixed(digits)}, ${m23.toFixed(digits)}],
+[${m31.toFixed(digits)}, ${m32.toFixed(digits)}, ${m33.toFixed(digits)}]`;
 
   // pretifer-ignore
   const formula = `
@@ -260,9 +262,9 @@ ${R1}${R2}${R3} \\\\
 &= ${R} \\\\
 &=
 \\begin{pmatrix}
-${m11} & ${m12} & ${m13} \\\\
-${m21} & ${m22} & ${m23} \\\\
-${m31} & ${m32} & ${m33}
+${m11.toFixed(digits)} & ${m12.toFixed(digits)} & ${m13.toFixed(digits)} \\\\
+${m21.toFixed(digits)} & ${m22.toFixed(digits)} & ${m23.toFixed(digits)} \\\\
+${m31.toFixed(digits)} & ${m32.toFixed(digits)} & ${m33.toFixed(digits)}
 \\end{pmatrix}
 \\end{align*}
 `;
