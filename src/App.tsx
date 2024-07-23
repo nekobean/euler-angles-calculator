@@ -55,6 +55,12 @@ function EulerRotation() {
     "\\textit{roll}",
     "\\textit{pitch}",
     "\\textit{yaw}",
+    "\\theta_x",
+    "\\theta_y",
+    "\\theta_z",
+    "\\theta_1",
+    "\\theta_2",
+    "\\theta_3",
   ];
 
   const [axes, setAxes] = useState(orientations.right);
@@ -144,7 +150,7 @@ function EulerRotation() {
                   setAngles([newValue, angles[1], angles[2]]);
                 }}
                 inputProps={{
-                  min: 0,
+                  min: -360,
                   max: 360,
                   step: 1,
                 }}
@@ -164,7 +170,7 @@ function EulerRotation() {
                   setAngles([angles[0], newValue, angles[2]]);
                 }}
                 inputProps={{
-                  min: 0,
+                  min: -360,
                   max: 360,
                   step: 1,
                 }}
@@ -184,7 +190,7 @@ function EulerRotation() {
                   setAngles([angles[0], angles[1], newValue]);
                 }}
                 inputProps={{
-                  min: 0,
+                  min: -360,
                   max: 360,
                   step: 1,
                 }}
