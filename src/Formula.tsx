@@ -245,7 +245,7 @@ export default function Foamula({
   // pretifer-ignore
   const formula = `
 \\begin{align*}
-(\\bm{X}, \\bm{Y}, \\bm{Z}) &=
+(\\bm{x}, \\bm{y}, \\bm{z}) &=
 ((${axes[0].x}, ${axes[0].y}, ${axes[0].z})^T,
 (${axes[1].x}, ${axes[1].y}, ${axes[1].z})^T,
 (${axes[2].x}, ${axes[2].y}, ${axes[2].z})^T) \\\\
